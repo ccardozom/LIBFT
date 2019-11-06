@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 12:48:09 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/04 13:16:22 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/05 11:17:59 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/06 13:08:21 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <strings.h>
-
-void ft_bzero(void *s, size_t n)
+void		*ft_memmove(void *dst, void *src, size_t len)
 {
-	char* c;
-	size_t i;
-	
-	c = s;
-	i = 0;
-	while (i < n)
+	size_t	i;
+	char	*pdst;
+	char	*psrc;
+
+	pdst = (void*)dst;
+	psrc = (void*)src;
+	if (src == dst)
+		return (dst);
+	if (src < dst)
 	{
-	c[i] = '\0';
-	i++;
+		i = len;
+		while (i-- > 0)
+			pdst[i] = psrc[i];
 	}
-}
-
-int main()
-{
-    char str[50] = "GeeksForGeeks is for programming geeks.";
-    printf("\nBefore memset(): %s\n", str);
-
-  
-    ft_bzero(str, 5);
-
-    printf("After memset():  %s", str);
-    return 0;
+	else
+	{
+		i = 0;
+		while (i < len)
+		{
+			pdst[i] = psrc[i];
+			i++;
+		}
+	}
+	return (dst);
 }

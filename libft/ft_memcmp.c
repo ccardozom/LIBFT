@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 13:23:40 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/05 17:19:34 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/06 14:44:52 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/06 16:31:04 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		*ft_memcpy(void *dst, const void *src, size_t n)
+int	*ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	char	*pdst;
-	char	*psrc;
+	unsigned char *ps1;
+	unsigned char *ps2;
+	unsigned char c1;
+	unsigned char c2;
 
-	pdst = (void*)dst;
-	psrc = (void*)src;
-	i = 0;
-	while (i < n)
+	if (s1 && s2)
 	{
-		pdst[i] = psrc[i];
-		i++;
+		ps1 = (unsigned char*)s1;
+		ps2 = (unsigned char*)s2;
+		while (n--)
+		{
+			c1 = *(unsigned char*)ps1;
+			c2 = *(unsigned char*)ps2;
+			if ( c1 != c2)
+				return (c1 - c2);
+			ps1++;
+			ps2++; 
+		}
+		return (0);
 	}
-	return (dst);
+	return (-1);
 }

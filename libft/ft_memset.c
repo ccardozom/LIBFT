@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 13:23:40 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/05 17:19:34 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/04 11:49:26 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/05 15:53:03 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		*ft_memcpy(void *dst, const void *src, size_t n)
+void					*ft_memset(void *b, int c, size_t len)
 {
-	size_t	i;
-	char	*pdst;
-	char	*psrc;
+	size_t				i;
+	char				*a;
+	unsigned char		j;
 
-	pdst = (void*)dst;
-	psrc = (void*)src;
+	j = (unsigned char)c;
+	a = b;
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
-		pdst[i] = psrc[i];
+		a[i] = c;
 		i++;
 	}
-	return (dst);
+	return (0);
 }

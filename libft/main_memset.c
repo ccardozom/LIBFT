@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   main_memset.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 13:23:40 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/05 17:19:34 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/05 13:58:47 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/05 15:51:19 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
+#include <string.h>
+#include "ft_memset.c"
 
-void		*ft_memcpy(void *dst, const void *src, size_t n)
+void *ft_memset();
+
+int main()
 {
-	size_t	i;
-	char	*pdst;
-	char	*psrc;
+	char str[50] = "GeeksForGeeks is for programming geeks.";
+	printf("\nBefore memset(): %s\n", str);
 
-	pdst = (void*)dst;
-	psrc = (void*)src;
-	i = 0;
-	while (i < n)
-	{
-		pdst[i] = psrc[i];
-		i++;
-	}
-	return (dst);
+	ft_memset(str, '.', 10);
+	printf("After memset():  %s", str);
+
+	return 0;
 }

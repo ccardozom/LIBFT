@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 11:49:26 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/04 12:47:10 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/04 16:01:42 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/05 18:39:53 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<string.h>
-
-void ft_memset(void *b, int c, size_t len)
+void				*ft_memccpy(void *dst, void *src, int c, size_t n)
 {
-	size_t i;
-	char* p; 
+	size_t			i;
+	unsigned char	j;
+	char			*pdst;
+	char			*psrc;
 
+	j = (unsigned)c;
+	pdst = (void*)dst;
+	psrc = (void*)src;
 	i = 0;
-	p = (char*)b;
-	while (i != len)
+	while (i < n)
 	{
-		p[i] = c;
+		if (psrc[i] != c)
+			pdst[i] = psrc[i];
+		else
+		{
+			pdst[i] = psrc[i];
+			break ;
+		}
 		i++;
 	}
-}
-
-
-int main()
-{
-    char str[50] = "GeeksForGeeks is for programming geeks.";
-    printf("\nBefore memset(): %s\n", str);
-
-    // cambia los primero 7 caracteres de str por puntos
-    ft_memset(str, '.', 7);
-
-    printf("After memset():  %s", str);
-    return 0;
+	return (0);
 }

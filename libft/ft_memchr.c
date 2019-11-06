@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 13:23:40 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/05 17:19:34 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/06 14:44:52 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/06 15:45:32 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	char	*pdst;
-	char	*psrc;
+	unsigned char *p;
 
-	pdst = (void*)dst;
-	psrc = (void*)src;
-	i = 0;
-	while (i < n)
+	p = (unsigned char*)s;
+	if (s)
 	{
-		pdst[i] = psrc[i];
-		i++;
+		while (n--)
+		
+			if (*p == (unsigned char)c )
+				return ((unsigned char*)p);
+		p++;
+		}
 	}
-	return (dst);
+	return (NULL);
 }
