@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   main_memset.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 19:58:38 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/07 15:05:29 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/05 13:58:47 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/05 15:51:19 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
+#include <string.h>
+#include "ft_memset.c"
 
-size_t			ft_strlcat(char *dest, const char *src, size_t size)
+void *ft_memset();
+
+int main()
 {
-	unsigned int a;
-	unsigned int b;
+	char str[50] = "GeeksForGeeks is for programming geeks.";
+	printf("\nBefore memset(): %s\n", str);
 
-	a = 0;
-	b = 0;
-	while (dest[a] != '\0')
-		a++;
-	if (size > a + 1)
-		return (0);
-	while (src[b] != '\0')
-		b++;
-	if (size == a + 1)
-		b = b + (size - 1);
-	else
-		b = b + size;
-	return (b);
+	ft_memset(str, '.', 10);
+	printf("After memset():  %s", str);
+
+	return 0;
 }

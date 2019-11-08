@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 19:58:38 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/07 15:05:29 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/07 09:26:14 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/07 09:40:28 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t			ft_strlcat(char *dest, const char *src, size_t size)
+int		ft_isdigit(int c)
 {
-	unsigned int a;
-	unsigned int b;
-
-	a = 0;
-	b = 0;
-	while (dest[a] != '\0')
-		a++;
-	if (size > a + 1)
+	if (c == '\0')
 		return (0);
-	while (src[b] != '\0')
-		b++;
-	if (size == a + 1)
-		b = b + (size - 1);
-	else
-		b = b + size;
-	return (b);
+	if (c < '0' || c > '9')
+		return (0);
+	return (1);
 }

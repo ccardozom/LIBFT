@@ -1,41 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   main_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 11:49:26 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/04 12:47:10 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/05 15:20:34 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/07 09:38:22 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <ctype.h>
+#include "ft_isdigit.c"
 
-void ft_memset(void *b, int c, size_t len)
-{
-	size_t i;
-	char* p; 
-
-	i = 0;
-	p = (char*)b;
-	while (i != len)
-	{
-		p[i] = c;
-		i++;
-	}
-}
-
+int	ft_isdigit();
 
 int main()
 {
-    char str[50] = "GeeksForGeeks is for programming geeks.";
-    printf("\nBefore memset(): %s\n", str);
-
-    // cambia los primero 7 caracteres de str por puntos
-    ft_memset(str, '.', 7);
-
-    printf("After memset():  %s", str);
-    return 0;
+	printf("\nEl resultado puede ser 0(no es un digito) o 1(si es un digito):  %d\n", isdigit('a'));
+	printf("\nEl resultado puede ser 0(no es un digito) o 1(si es un digito):  %d\n", ft_isdigit('a'));
+	return 0;
 }

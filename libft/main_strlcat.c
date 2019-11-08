@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_memccpy.c                                     :+:      :+:    :+:   */
+/*   main_strlcat.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 16:05:08 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/05 18:40:01 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/07 15:02:19 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <strings.h>
 #include <stdlib.h>
-#include "ft_memccpy.c"
+#include "ft_strlcat.c"
 
-void *ft_memccpy();
+size_t ft_strlcat();
 
 int main () {
-	char src[] = "funcion memccpy";
-	char dst[20]; 
-	char src1[] = "copia funcion memccpy copia";
 
-	printf("Antes de la funcion:\n%s", src1);
-	memccpy(dst, src1, 'r', 8);
-	printf("\nDespues de la funcion:\n%s", dst);
+	char dst[] = "made";
+	char src[] = "holaadios";
+	
+	printf("\n\nResultado de la funcion original strchr\n");
+	printf("Antes:\n%s\n%s", dst, src);
+	printf("\n%lu",strlcat(dst, src, 5));
 
-	printf("\nAntes de la funcion:\n%s", src1);
-	memccpy(dst, src, 'r', 6);
-	printf("\nDespues de la funcion:\n%s",dst);
-
-   return(0);
+	printf("\n\nResultado de la funcion original strchr\n");
+	printf("Antes:\n%s\n%s", dst, src);
+	printf("\n%lu",ft_strlcat(dst, src, 5));
+	
+ 	return(0);
 }

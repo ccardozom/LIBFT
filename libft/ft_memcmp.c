@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 19:58:38 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/07 15:05:29 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/06 14:44:52 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/07 08:45:17 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t			ft_strlcat(char *dest, const char *src, size_t size)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned int a;
-	unsigned int b;
+	unsigned const char	*t1;
+	unsigned const char	*t2;
 
-	a = 0;
-	b = 0;
-	while (dest[a] != '\0')
-		a++;
-	if (size > a + 1)
+	t1 = (unsigned const char*)s1;
+	t2 = (unsigned const char*)s2;
+	if (t1 == NULL || t2 == NULL)
 		return (0);
-	while (src[b] != '\0')
-		b++;
-	if (size == a + 1)
-		b = b + (size - 1);
-	else
-		b = b + size;
-	return (b);
+	while (n)
+	{
+		if (*t1 != *t2)
+			return (*t1 - *t2);
+		t1++;
+		t2++;
+		n--;
+	}
+	return (0);
 }

@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/13 14:47:38 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/09/19 08:25:31 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/05 11:17:59 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/06 13:08:21 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_alpha(char *str)
+void		*ft_memmove(void *dst, void *src, size_t len)
 {
-	int i;
+	size_t	i;
+	char	*pdst;
+	char	*psrc;
 
-	i = 0;
-	if (str[i] == '\0')
+	pdst = (void*)dst;
+	psrc = (void*)src;
+	if (src == dst)
+		return (dst);
+	if (src < dst)
 	{
-		return (1);
+		i = len;
+		while (i-- > 0)
+			pdst[i] = psrc[i];
 	}
-	while (str[i] != '\0')
+	else
 	{
-		if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
+		i = 0;
+		while (i < len)
 		{
-			return (0);
+			pdst[i] = psrc[i];
+			i++;
 		}
-		++i;
 	}
-	return (1);
+	return (dst);
 }

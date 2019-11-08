@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 19:58:38 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/07 15:05:29 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/04 11:49:26 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/05 15:53:03 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t			ft_strlcat(char *dest, const char *src, size_t size)
+void					*ft_memset(void *b, int c, size_t len)
 {
-	unsigned int a;
-	unsigned int b;
+	size_t				i;
+	char				*a;
+	unsigned char		j;
 
-	a = 0;
-	b = 0;
-	while (dest[a] != '\0')
-		a++;
-	if (size > a + 1)
-		return (0);
-	while (src[b] != '\0')
-		b++;
-	if (size == a + 1)
-		b = b + (size - 1);
-	else
-		b = b + size;
-	return (b);
+	j = (unsigned char)c;
+	a = b;
+	i = 0;
+	while (i < len)
+	{
+		a[i] = c;
+		i++;
+	}
+	return (0);
 }

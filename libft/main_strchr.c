@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   main_memccpy.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 12:48:09 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/04 13:16:22 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/04 16:05:08 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/07 12:41:49 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <strings.h>
+#include <stdlib.h>
+#include "ft_strchr.c"
 
-void ft_bzero(void *s, size_t n)
-{
-	char* c;
-	size_t i;
+char *ft_strchr();
+
+int main () {
+
+	char src1[] = "copia de la funcion";
+ 
 	
-	c = s;
-	i = 0;
-	while (i < n)
-	{
-	c[i] = '\0';
-	i++;
-	}
-}
+	printf("\n\nResultado de la funcion original strchr\n");
+	printf("Antes:\n%s", src1);
+	printf("\n%s",strchr(src1, 'l'));
 
-int main()
-{
-    char str[50] = "GeeksForGeeks is for programming geeks.";
-    printf("\nBefore memset(): %s\n", str);
+	printf("\n\nResultado de la funcion ft_strchr\n");
+	printf("Antes:\n%s", src1);
+	printf("\n%s",ft_strchr(src1, 'l'));
 
-  
-    ft_bzero(str, 5);
-
-    printf("After memset():  %s", str);
-    return 0;
+ 	return(0);
 }
