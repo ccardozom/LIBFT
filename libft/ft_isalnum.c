@@ -1,42 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 19:58:38 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/11 19:09:19 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/07 09:26:14 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/07 10:00:41 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-size_t			ft_strlcat(char *dest, const char *src, size_t size)
+int		ft_isalnum(int c)
 {
-	size_t	a;
-	size_t	b;
-	size_t	res;
-
-	a = 0;
-	b = 0;
-	while (dest[a] != '\0')
-		a++;
-	if (size > a + 1)
+	if (c == '\0')
 		return (0);
-	while (src[b] != '\0')
-		b++;
-	if (size <= a)
-		b = b + size;
-	else
-		b = b + a;
-	res = 0;
-	while (src[res] != '\0' && a + 1 < size)
-	{
-		dest[a] = src[res];
-		a++;
-		res++;
-	}
-	dest[a] = '\0';
-	return (b);
+	if ((c < '0' || c > '9') && ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z')))
+		return (0);
+	return (1);
 }

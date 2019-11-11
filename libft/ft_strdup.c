@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 19:58:38 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/11 19:09:19 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/08 09:00:23 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/11 18:14:21 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdlib.h>
 
-size_t			ft_strlcat(char *dest, const char *src, size_t size)
+char	*ft_strdup(const char *s1)
 {
-	size_t	a;
-	size_t	b;
-	size_t	res;
+	char	*s;
+	int		i;
 
-	a = 0;
-	b = 0;
-	while (dest[a] != '\0')
-		a++;
-	if (size > a + 1)
-		return (0);
-	while (src[b] != '\0')
-		b++;
-	if (size <= a)
-		b = b + size;
-	else
-		b = b + a;
-	res = 0;
-	while (src[res] != '\0' && a + 1 < size)
+	i = 0;
+	while (s1[i] != '\0')
+		i++;
+	s = malloc(i * sizeof(char));
+	i = 0;
+	while (s1[i] != '\0')
 	{
-		dest[a] = src[res];
-		a++;
-		res++;
+		s[i] = s1[i];
+		i++;
 	}
-	dest[a] = '\0';
-	return (b);
+	s[i] = '\0';
+	return (s);
 }

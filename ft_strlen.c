@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 14:39:27 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/09/18 15:16:18 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/09/10 18:09:07 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/11 17:13:57 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_printable(char *str)
+#include <stddef.h>
+
+size_t		ft_strlen(const char *str)
 {
 	int i;
 
 	i = 0;
-	if (str[i] == '\0')
-	{
-		return (1);
-	}
 	while (str[i] != '\0')
 	{
-		if ((str[i] < 32) || (str[i] > 126))
-		{
-			return (0);
-		}
 		i++;
 	}
-	return (1);
+	return (i);
 }

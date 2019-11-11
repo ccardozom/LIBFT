@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 18:09:07 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/09/11 22:07:24 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/11 17:23:23 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
+#include <stddef.h>
 
-int		ft_putstr(char *str)
+size_t		ft_strlen(const char *str)
 {
 	int i;
 

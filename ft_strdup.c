@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/13 14:47:38 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/09/19 08:25:31 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/08 09:00:23 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/11 17:14:25 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_alpha(char *str)
+#include <stddef.h>
+#include <stdlib.h>
+
+char	*ft_strdup(const char *s1)
 {
-	int i;
+	char	*s;
+	int		i;
 
 	i = 0;
-	if (str[i] == '\0')
+	while (s1[i] != '\0')
+		i++;
+	s = malloc(i * sizeof(char));
+
+	i = 0;
+	while (s1[i] != '\0')
 	{
-		return (1);
+		s[i] = s1[i];
+		i++;
 	}
-	while (str[i] != '\0')
-	{
-		if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
-		{
-			return (0);
-		}
-		++i;
-	}
-	return (1);
+	s[i] = '\0';
+	return (s);
 }

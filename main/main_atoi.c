@@ -1,42 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   main_atoi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 19:58:38 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/11 19:09:19 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/05 15:20:34 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/08 08:46:52 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "ft_atoi.c"
 
-size_t			ft_strlcat(char *dest, const char *src, size_t size)
+int	ft_atoi();
+
+int main()
 {
-	size_t	a;
-	size_t	b;
-	size_t	res;
-
-	a = 0;
-	b = 0;
-	while (dest[a] != '\0')
-		a++;
-	if (size > a + 1)
-		return (0);
-	while (src[b] != '\0')
-		b++;
-	if (size <= a)
-		b = b + size;
-	else
-		b = b + a;
-	res = 0;
-	while (src[res] != '\0' && a + 1 < size)
-	{
-		dest[a] = src[res];
-		a++;
-		res++;
-	}
-	dest[a] = '\0';
-	return (b);
+	printf("\nEs un caracter 1234:  %d\n", atoi("\n34"));
+	printf("\nEs un caracter 1234:  %d\n", ft_atoi("\n34"));
+	return 0;
 }

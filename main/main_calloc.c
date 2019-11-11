@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   main_calloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 19:58:38 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/11 19:09:19 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/08 08:50:37 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/11 14:20:09 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "ft_calloc.c"
 
-size_t			ft_strlcat(char *dest, const char *src, size_t size)
+void	*ft_calloc();
+int main()
 {
-	size_t	a;
-	size_t	b;
-	size_t	res;
-
-	a = 0;
-	b = 0;
-	while (dest[a] != '\0')
-		a++;
-	if (size > a + 1)
-		return (0);
-	while (src[b] != '\0')
-		b++;
-	if (size <= a)
-		b = b + size;
-	else
-		b = b + a;
-	res = 0;
-	while (src[res] != '\0' && a + 1 < size)
+	char *p;
+	char *m;
+	int i = 0;
+	p = calloc(5, sizeof(int));
+	while (i < 5)
 	{
-		dest[a] = src[res];
-		a++;
-		res++;
+		printf("\nP[%d]: %d\n",i,p[i]);
+		i++;
 	}
-	dest[a] = '\0';
-	return (b);
+	free(p);
+
+	m = ft_calloc(5, sizeof(int));
+	i = 0;
+	while (i < 5)
+	{
+		printf("\nM[%d]: %d\n",i,m[i]);
+		i++;
+	}
+	free(m);
 }

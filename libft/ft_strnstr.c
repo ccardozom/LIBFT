@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 13:11:40 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/09/18 15:01:59 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/09/19 19:58:38 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/11 18:16:07 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_numeric(char *str)
+#include <stddef.h>
+
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int i;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	if (str[i] == '\0')
+	if (*needle == '\0' || needle == NULL)
+		return ((char*)haystack);
+	while (haystack[i] != '\0' && i < len)
 	{
-		return (1);
-	}
-	while (str[i] != '\0')
-	{
-		if ((str[i] < '0') || (str[i] > '9'))
+		j = 0;
+		while (needle[j] == haystack[i + j] && i + j < len)
 		{
-			return (0);
+			if (needle[j + 1] == '\0')
+			{
+				return ((char*)haystack + i);
+			}
+			j++;
 		}
 		i++;
 	}
-	return (1);
+	return (NULL);
 }

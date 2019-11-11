@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 14:19:04 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/09/18 15:08:44 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/07 10:09:01 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/07 10:14:40 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_uppercase(char *str)
+int		ft_isprint(int c)
 {
-	int i;
-
-	i = 0;
-	if (str[i] == '\0')
-	{
+	if (c >= ' ' && c <= '~')
 		return (1);
-	}
-	while (str[i] != '\0')
-	{
-		if ((str[i] < 'A') || (str[i] > 'Z'))
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
+	else
+		return (0);
 }

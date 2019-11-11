@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 15:01:42 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/09/16 15:37:45 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/08 10:55:35 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/11 17:24:59 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strupcase(char *str)
-{
-	int i;
+#include <stdlib.h>
 
+void		*ft_calloc(size_t count, size_t size)
+{
+	char	*ptr;
+	size_t	i;
+
+	if (count == 0 || size == 0)
+		return (NULL);
+	ptr = malloc(size * count);
 	i = 0;
-	while (str[i])
+	while (i <= count)
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-		{
-			str[i] = str[i] - 32;
-		}
+		ptr[i] = 0;
 		i++;
 	}
-	return (str);
+	return (ptr);
 }

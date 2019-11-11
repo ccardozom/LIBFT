@@ -6,9 +6,11 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:17:59 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/06 13:08:21 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/11 15:21:56 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 void		*ft_memmove(void *dst, void *src, size_t len)
 {

@@ -1,42 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 19:58:38 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/11 19:09:19 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/09/16 15:01:42 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/11 10:47:20 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-size_t			ft_strlcat(char *dest, const char *src, size_t size)
+int	ft_toupper(int c)
 {
-	size_t	a;
-	size_t	b;
-	size_t	res;
-
-	a = 0;
-	b = 0;
-	while (dest[a] != '\0')
-		a++;
-	if (size > a + 1)
-		return (0);
-	while (src[b] != '\0')
-		b++;
-	if (size <= a)
-		b = b + size;
-	else
-		b = b + a;
-	res = 0;
-	while (src[res] != '\0' && a + 1 < size)
+	if (c >= 'a' && c <= 'z')
 	{
-		dest[a] = src[res];
-		a++;
-		res++;
+		c = c - 32;
 	}
-	dest[a] = '\0';
-	return (b);
+	return (c);
 }

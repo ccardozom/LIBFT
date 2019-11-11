@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 19:58:38 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/11 19:09:19 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/08 08:20:01 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/08 09:00:09 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-size_t			ft_strlcat(char *dest, const char *src, size_t size)
+int	ft_atoi(const char *str)
 {
-	size_t	a;
-	size_t	b;
-	size_t	res;
+	int res;
+	int negativo;
 
-	a = 0;
-	b = 0;
-	while (dest[a] != '\0')
-		a++;
-	if (size > a + 1)
-		return (0);
-	while (src[b] != '\0')
-		b++;
-	if (size <= a)
-		b = b + size;
-	else
-		b = b + a;
 	res = 0;
-	while (src[res] != '\0' && a + 1 < size)
+	negativo = 1;
+	while (*str && (*str == ' ' || *str == '\n' || *str == '\t' ||
+			*str == '\v' || *str == '\f' || *str == '\r'))
+		str++;
+	if (*str == '-')
 	{
-		dest[a] = src[res];
-		a++;
-		res++;
+		negativo = -1;
+		str++;
 	}
-	dest[a] = '\0';
-	return (b);
+	while (*str && *str >= '0' && *str <= '9')
+	{
+		res = res * 10 + (*str - 48);
+		str++;
+	}
+	return (res * negativo);
 }

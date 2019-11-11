@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   main_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 14:05:18 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/09/18 15:04:39 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/05 15:20:34 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/07 09:38:22 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_lowercase(char *str)
-{
-	int i;
+#include <stdio.h>
+#include <ctype.h>
+#include "ft_isdigit.c"
 
-	i = 0;
-	if (str[i] == '\0')
-	{
-		return (1);
-	}
-	while (str[i] != '\0')
-	{
-		if ((str[i] < 'a') || (str[i] > 'z'))
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
+int	ft_isdigit();
+
+int main()
+{
+	printf("\nEl resultado puede ser 0(no es un digito) o 1(si es un digito):  %d\n", isdigit('a'));
+	printf("\nEl resultado puede ser 0(no es un digito) o 1(si es un digito):  %d\n", ft_isdigit('a'));
+	return 0;
 }
