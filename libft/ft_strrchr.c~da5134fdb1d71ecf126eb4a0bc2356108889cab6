@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 15:01:42 by ccardozo          #+#    #+#             */
-<<<<<<< HEAD:libft/ft_toupper.c
-/*   Updated: 2019/11/11 10:47:20 by ccardozo         ###   ########.fr       */
-=======
-/*   Updated: 2019/11/07 12:36:41 by ccardozo         ###   ########.fr       */
->>>>>>> da5134fdb1d71ecf126eb4a0bc2356108889cab6:libft/ft_toupper.c
+/*   Created: 2019/11/06 13:17:38 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/07 12:42:54 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+char	*ft_strrchr(const char *src, int c)
 {
-	if (c >= 'a' && c <= 'z')
+	int i;
+
+	i = 0;
+	while (*src)
 	{
-		c = c - 32;
+		if (*src == c)
+			i = 1;
+		src++;
 	}
-	return (c);
+	if (i == 0)
+		return (NULL);
+	while (*src != c)
+		src--;
+	return ((char*)src);
 }

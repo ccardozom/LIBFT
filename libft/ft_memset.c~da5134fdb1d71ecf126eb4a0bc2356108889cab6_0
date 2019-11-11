@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 15:01:42 by ccardozo          #+#    #+#             */
-<<<<<<< HEAD:libft/ft_toupper.c
-/*   Updated: 2019/11/11 10:47:20 by ccardozo         ###   ########.fr       */
-=======
-/*   Updated: 2019/11/07 12:36:41 by ccardozo         ###   ########.fr       */
->>>>>>> da5134fdb1d71ecf126eb4a0bc2356108889cab6:libft/ft_toupper.c
+/*   Created: 2019/11/04 11:49:26 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/05 15:53:03 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+void					*ft_memset(void *b, int c, size_t len)
 {
-	if (c >= 'a' && c <= 'z')
+	size_t				i;
+	char				*a;
+	unsigned char		j;
+
+	j = (unsigned char)c;
+	a = b;
+	i = 0;
+	while (i < len)
 	{
-		c = c - 32;
+		a[i] = c;
+		i++;
 	}
-	return (c);
+	return (0);
 }

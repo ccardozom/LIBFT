@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 15:01:42 by ccardozo          #+#    #+#             */
-<<<<<<< HEAD:libft/ft_toupper.c
-/*   Updated: 2019/11/11 10:47:20 by ccardozo         ###   ########.fr       */
-=======
-/*   Updated: 2019/11/07 12:36:41 by ccardozo         ###   ########.fr       */
->>>>>>> da5134fdb1d71ecf126eb4a0bc2356108889cab6:libft/ft_toupper.c
+/*   Created: 2019/11/08 10:55:35 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/08 11:49:06 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+void		*ft_calloc(size_t count, size_t size)
 {
-	if (c >= 'a' && c <= 'z')
+	char	*ptr;
+	size_t	i;
+
+	if (count == 0 || size == 0)
+		return (NULL);
+	ptr = malloc(size * count);
+	i = 0;
+	while (i <= count)
 	{
-		c = c - 32;
+		ptr[i] = 0;
+		i++;
 	}
-	return (c);
+	return (ptr);
 }

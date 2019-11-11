@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   main_atoi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 15:01:42 by ccardozo          #+#    #+#             */
-<<<<<<< HEAD:libft/ft_toupper.c
-/*   Updated: 2019/11/11 10:47:20 by ccardozo         ###   ########.fr       */
-=======
-/*   Updated: 2019/11/07 12:36:41 by ccardozo         ###   ########.fr       */
->>>>>>> da5134fdb1d71ecf126eb4a0bc2356108889cab6:libft/ft_toupper.c
+/*   Created: 2019/11/05 15:20:34 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/08 08:46:52 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include <stdio.h>
+#include <stdlib.h>
+#include "ft_atoi.c"
+
+int	ft_atoi();
+
+int main()
 {
-	if (c >= 'a' && c <= 'z')
-	{
-		c = c - 32;
-	}
-	return (c);
+	printf("\nEs un caracter 1234:  %d\n", atoi("\n34"));
+	printf("\nEs un caracter 1234:  %d\n", ft_atoi("\n34"));
+	return 0;
 }

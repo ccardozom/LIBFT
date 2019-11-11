@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   main_strdup.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 15:01:42 by ccardozo          #+#    #+#             */
-<<<<<<< HEAD:libft/ft_toupper.c
-/*   Updated: 2019/11/11 10:47:20 by ccardozo         ###   ########.fr       */
-=======
-/*   Updated: 2019/11/07 12:36:41 by ccardozo         ###   ########.fr       */
->>>>>>> da5134fdb1d71ecf126eb4a0bc2356108889cab6:libft/ft_toupper.c
+/*   Created: 2019/11/08 08:50:37 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/08 09:24:47 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "ft_strdup.c"
+
+char	*ft_strdup();
+int main()
 {
-	if (c >= 'a' && c <= 'z')
-	{
-		c = c - 32;
-	}
-	return (c);
+	char a[] = "prueba de funcion original";
+	char b[] = "prueba de funcion original";
+
+	printf("\nAntes: \n%s\nDespues: \n%s\n",a,strdup(a));
+	printf("\n\nAntes: \n%s\nDespues: \n%s\n",a,ft_strdup(b));
 }

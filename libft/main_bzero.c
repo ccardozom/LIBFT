@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   main_bzero.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 15:01:42 by ccardozo          #+#    #+#             */
-<<<<<<< HEAD:libft/ft_toupper.c
-/*   Updated: 2019/11/11 10:47:20 by ccardozo         ###   ########.fr       */
-=======
-/*   Updated: 2019/11/07 12:36:41 by ccardozo         ###   ########.fr       */
->>>>>>> da5134fdb1d71ecf126eb4a0bc2356108889cab6:libft/ft_toupper.c
+/*   Created: 2019/11/05 15:20:34 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/05 15:52:59 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include <stdio.h>
+#include <string.h>
+#include "ft_bzero.c"
+
+void ft_bzero();
+
+int main()
 {
-	if (c >= 'a' && c <= 'z')
-	{
-		c = c - 32;
-	}
-	return (c);
+	char str[] = "GeeksForGeeks is for programming geeks.";
+
+	printf("\nBefore memset(): %s\n", str);
+	bzero(str, 6);
+	printf("\nAfter memset():  %s\n", str);
+
+	printf("\nBefore memset(): %s\n", str+7);
+	ft_bzero(str, 9);
+	printf("\nAfter memset():  %s\n", str+10);
+
+
+
+	return 0;
 }

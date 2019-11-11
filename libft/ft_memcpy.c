@@ -6,12 +6,19 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:23:40 by ccardozo          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2019/11/11 19:27:33 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
+=======
+/*   Updated: 2019/11/05 17:19:34 by ccardozo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+>>>>>>> da5134fdb1d71ecf126eb4a0bc2356108889cab6
 void		*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
@@ -20,8 +27,11 @@ void		*ft_memcpy(void *dst, const void *src, size_t n)
 
 	pdst = (void*)dst;
 	psrc = (void*)src;
+<<<<<<< HEAD
 	if (dst == 0 && src == 0)
 		return (0);
+=======
+>>>>>>> da5134fdb1d71ecf126eb4a0bc2356108889cab6
 	i = 0;
 	while (i < n)
 	{

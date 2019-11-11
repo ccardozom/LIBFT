@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   main_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 15:01:42 by ccardozo          #+#    #+#             */
-<<<<<<< HEAD:libft/ft_toupper.c
-/*   Updated: 2019/11/11 10:47:20 by ccardozo         ###   ########.fr       */
-=======
-/*   Updated: 2019/11/07 12:36:41 by ccardozo         ###   ########.fr       */
->>>>>>> da5134fdb1d71ecf126eb4a0bc2356108889cab6:libft/ft_toupper.c
+/*   Created: 2019/11/05 15:20:34 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/07 09:56:53 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include <stdio.h>
+#include <ctype.h>
+#include "ft_isalnum.c"
+
+int	ft_isalnum();
+
+int main()
 {
-	if (c >= 'a' && c <= 'z')
-	{
-		c = c - 32;
-	}
-	return (c);
+	printf("\nEl resultado puede ser 0(no es un digito/caracter) o 1(si es un digit/caracter):  %d\n", isalnum('a'));
+	printf("\nEl resultado puede ser 0(no es un digito/caracter) o 1(si es un digito/letra):  %d\n", ft_isalnum('2'));
+	return 0;
 }
