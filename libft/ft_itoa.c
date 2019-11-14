@@ -6,56 +6,59 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 14:48:45 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/14 15:53:25 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/14 18:16:17 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		len(long nb)
+static int	count_len(int nbr)
 {
-	int		len;
+	int				counter;
+	unsigned int	u_nbr;
 
-	len = 0;
-	if (nb < 0)
+	if (nbr == 0)
+		return (1);
+	counter = 0;
+	u_nbr = nbr;
+	if (nbr < 0)
 	{
-		nb = nb * -1;
-		len++;
+		counter++;
+		u_nbr = -nbr;
 	}
-	while (nb > 0)
+	while (u_nbr > 0)
 	{
-		nb = nb / 10;
-		len++;
+		u_nbr /= 10;
+		counter++;
 	}
-	return (len);
+	return (counter);
 }
 
-char	*ft_itoa(int nb)
+char		*ft_itoa(int n)
 {
-	char *str;
-	long	n;
-	int		i;
+	char			*str;
+	int				len;
+	int				is_negative;
+	unsigned int	u_nbr;
 
-	n = nb;
-	i = len(n);
-	if (!(str = (char*)malloc(sizeof(char) * (i + 1))))
+	len = count_len(n);
+	if ((str = (char*)malloc(sizeof(char) * (len + 1))) == NULL)
 		return (NULL);
-	str[i--] = '\0';
-	if (n == 0)
-	{
-		str[0] = 48;
-		return (str);
-	}
+	str[len] = '\0';
+	is_negative = 0;
+	u_nbr = n;
 	if (n < 0)
 	{
+		is_negative = 1;
 		str[0] = '-';
-		n = n * -1;
+		u_nbr = -n;
 	}
-	while (n > 0)
+	len--;
+	while (len >= (is_negative ? 1 : 0))
 	{
-		str[i] = 48 + (n % 10);
-		n = n / 10;
-		i--;
+		str[len] = u_nbr % 10 + '0';
+		u_nbr /= 10;
+		len--;
 	}
 	return (str);
 }

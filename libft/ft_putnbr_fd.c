@@ -6,7 +6,7 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 13:08:32 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/14 14:24:01 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/14 17:09:17 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,4 @@ void	ft_putnbr_fd(int n, int fd)
 	if (nbr >= 10)
 		ft_putnbr_fd(nbr / 10, fd);
 	ft_putchar_fd((char)(nbr % 10 + 48), fd);
-}	
+}

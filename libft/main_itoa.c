@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   main_atoi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/17 10:32:11 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/14 17:10:24 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/05 15:20:34 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/14 18:12:16 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "ft_itoa.c"
 
-size_t		ft_strlcpy(char *dest, char *src, size_t size)
+char	*ft_itoa();
+
+int main()
 {
-	size_t	i;
-
-	if (!dest || !src)
-		return (0);
-	if (size == 0)
-		return (ft_strlen(src));
-	size--;
-	i = 0;
-	while (i < size && src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (ft_strlen(src));
+	
+//	printf("\nEs un caracter 1234:  %d\n", itoi("\n34"));
+	printf("\nEs un digito es 1234:  %s\n", ft_itoa('i'));
+	return 0;
 }
