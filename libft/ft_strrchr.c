@@ -6,26 +6,26 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 13:17:38 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/11 19:47:14 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/12 12:01:55 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-char	*ft_strrchr(const char *src, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int i;
+	char	*ps;
 
-	i = 0;
-	while (*src)
+	ps = 0;
+	while (*s)
 	{
-		if (*src == c)
-			i = 1;
-		src++;
+		if (*s == c)
+			ps = (char*)s;
+		++s;
 	}
-	if (i == 0)
-		return (NULL);
-	while (*src != c)
-		src--;
-	return ((char*)src);
+	if (ps)
+		return (ps);
+	if (c == '\0')
+		return ((char*)s);
+	return (0);
 }

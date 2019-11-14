@@ -6,7 +6,7 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 08:20:01 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/08 09:00:09 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/14 15:51:10 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@ int	ft_atoi(const char *str)
 {
 	int res;
 	int negativo;
+	int result;
 
 	res = 0;
 	negativo = 1;
@@ -30,5 +31,6 @@ int	ft_atoi(const char *str)
 		res = res * 10 + (*str - 48);
 		str++;
 	}
-	return (res * negativo);
+	result = res * negativo;
+	return (result);
 }

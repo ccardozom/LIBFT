@@ -6,7 +6,7 @@
 #    By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 11:08:48 by ccardozo          #+#    #+#              #
-#    Updated: 2019/11/11 17:31:19 by ccardozo         ###   ########.fr        #
+#    Updated: 2019/11/14 16:39:21 by ccardozo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,15 @@ FILES = 		ft_memset.c \
 				ft_strnstr.c \
 				ft_atoi.c \
 				ft_calloc.c \
-				ft_strdup.c
+				ft_strdup.c \
+				ft_substr.c \
+				ft_split.c \
+				ft_putchar_fd.c \
+				ft_putstr_fd.c \
+				ft_putendl_fd.c \
+				ft_putnbr_fd.c \
+				ft_strmapi.c \
+				ft_itoa.c 
 
 OBJ = ${FILES:.c=.o}
 

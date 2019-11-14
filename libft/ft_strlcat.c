@@ -6,37 +6,32 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 19:58:38 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/11 19:09:19 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/12 10:49:57 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-size_t			ft_strlcat(char *dest, const char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t	a;
-	size_t	b;
-	size_t	res;
+	int		i;
+	size_t	src_size;
+	size_t	dst_size;
+	int		fin_size;
+	char	*end_dest;
 
-	a = 0;
-	b = 0;
-	while (dest[a] != '\0')
-		a++;
-	if (size > a + 1)
-		return (0);
-	while (src[b] != '\0')
-		b++;
-	if (size == a + 1)
-		b = b + (size - 1);
-	else
-		b = b + a;
-	res = 0;
-	while (src[res] != '\0' && a + 1 < size)
+	dst_size = ft_strlen(dest);
+	src_size = ft_strlen(src);
+	fin_size = (int)size - (int)dst_size - 1;
+	if (fin_size + 1 <= 0)
+		return (src_size + size);
+	end_dest = dest + dst_size;
+	i = 0;
+	while (i < fin_size && src[i])
 	{
-		dest[a] = src[res];
-		a++;
-		res++;
+		end_dest[i] = src[i];
+		i++;
 	}
-	dest[a] = '\0';
-	return (b);
+	end_dest[i] = '\0';
+	return (src_size + dst_size);
 }

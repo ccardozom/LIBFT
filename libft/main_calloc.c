@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   main_calloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 18:09:07 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/12 18:51:32 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/08 08:50:37 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/12 13:16:24 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "ft_calloc.c"
 
-size_t		ft_strlen(const char *str)
+void	*ft_calloc();
+int main()
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
+	char *p;
+	char *m;
+	int i = 0;
+	p = calloc(8539, sizeof(int));
+	while (i < 5)
 	{
+		printf("\nP[%d]: %d\n",i,p[i]);
 		i++;
 	}
-	return (i);
+	free(p);
+
+	m = ft_calloc(8539, sizeof(int));
+	i = 0;
+	while (i < 5)
+	{
+		printf("\nM[%d]: %d\n",i,m[i]);
+		i++;
+	}
+	free(m);
 }
