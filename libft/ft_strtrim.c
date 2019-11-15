@@ -6,15 +6,15 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 16:52:15 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/14 17:07:23 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/15 16:03:10 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*ft_strncpy(char *dest, const char *src, size_t n)
+static char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	size_t	i;
+	size_t				i;
 
 	i = 0;
 	while (src[i] && i < n)
@@ -27,7 +27,7 @@ static char		*ft_strncpy(char *dest, const char *src, size_t n)
 	return (dest);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	len;

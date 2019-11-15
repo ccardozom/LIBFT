@@ -6,7 +6,7 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 08:20:01 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/14 15:51:10 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/15 16:26:32 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,13 @@ int	ft_atoi(const char *str)
 	}
 	while (*str && *str >= '0' && *str <= '9')
 	{
-		res = res * 10 + (*str - 48);
+		res = res * 10 + *str - 48;
 		str++;
 	}
 	result = res * negativo;
+	if (result > 2147483647)
+		return (-1);
+	if (result < -2147483648)
+		return (0);
 	return (result);
 }

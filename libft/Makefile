@@ -6,7 +6,7 @@
 #    By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 11:08:48 by ccardozo          #+#    #+#              #
-#    Updated: 2019/11/14 18:29:55 by ccardozo         ###   ########.fr        #
+#    Updated: 2019/11/15 12:25:41 by ccardozo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,8 +49,13 @@ FILES = 		ft_memset.c \
 				ft_putnbr_fd.c \
 				ft_strmapi.c \
 				ft_itoa.c \
-				ft_strtrim.c
-
+				ft_strtrim.c \
+				ft_lstnew.c \
+				ft_lstadd_front.c \
+				ft_lstsize.c \
+				ft_lstlast.c \
+				ft_lstadd_back.c \
+				ft_lstdelone.c
 OBJ = ${FILES:.c=.o}
 
 all: $(NAME)
