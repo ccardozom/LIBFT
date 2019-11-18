@@ -6,7 +6,7 @@
 #    By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 11:08:48 by ccardozo          #+#    #+#              #
-#    Updated: 2019/11/15 12:25:41 by ccardozo         ###   ########.fr        #
+#    Updated: 2019/11/18 10:01:29 by ccardozo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,10 @@ FILES = 		ft_memset.c \
 				ft_lstsize.c \
 				ft_lstlast.c \
 				ft_lstadd_back.c \
-				ft_lstdelone.c
+				ft_lstdelone.c \
+				ft_lstclear.c \
+				ft_lstiter.c \
+				ft_lstmap.c
 OBJ = ${FILES:.c=.o}
 
 all: $(NAME)

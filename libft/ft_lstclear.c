@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_atoi.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 15:20:34 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/14 18:12:16 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/18 09:18:47 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/18 09:49:57 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "ft_itoa.c"
+#include "libft.h"
 
-char	*ft_itoa();
-
-int main()
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	
-//	printf("\nEs un caracter 1234:  %d\n", itoi("\n34"));
-	printf("\nEs un digito es 1234:  %s\n", ft_itoa('i'));
-	return 0;
+	if (lst == NULL || del == NULL)
+		return ;
+	if (*lst == NULL)
+		return ;
+	ft_lstclear(&((*lst)->next), del);
+	ft_lstdelone(*lst, del);
+	*lst = NULL;
 }

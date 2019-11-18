@@ -1,40 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_calloc.c                                      :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/08 08:50:37 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/12 13:16:24 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/18 08:52:08 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/18 09:52:59 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include "ft_calloc.c"
+#include "libft.h"
 
-void	*ft_calloc();
-int main()
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	char *p;
-	char *m;
-	int i = 0;
-	p = calloc(8539, sizeof(int));
-	while (i < 5)
+	if (f == NULL)
+		return ;
+	while (lst != NULL)
 	{
-		printf("\nP[%d]: %d\n",i,p[i]);
-		i++;
+		(*f)(lst->content);
+		lst = lst->next;
 	}
-	free(p);
-
-	m = ft_calloc(8539, sizeof(int));
-	i = 0;
-	while (i < 5)
-	{
-		printf("\nM[%d]: %d\n",i,m[i]);
-		i++;
-	}
-	free(m);
 }
