@@ -6,16 +6,15 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 08:20:01 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/18 10:59:22 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/19 08:38:38 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *s)
-
+int				ft_atoi(const char *s)
 {
-	int		p;
+	int			p;
 	long int	nb;
 
 	nb = 0;

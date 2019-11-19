@@ -6,11 +6,11 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 11:49:26 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/11 18:09:36 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/19 16:51:37 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void		*ft_memset(void *b, int c, size_t len)
 {

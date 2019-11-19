@@ -6,7 +6,7 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 16:52:15 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/15 16:03:10 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/19 14:38:03 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 		while (s1[start + len - 1]
 				&& ft_strchr(set, s1[start + len - 1]) != NULL)
 			len--;
-	if ((trimed = (char*)malloc(sizeof(char) * (len + 1))) == NULL)
+	if (!(trimed = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	trimed = ft_strncpy(trimed, &s1[start], len);
 	trimed[len] = '\0';

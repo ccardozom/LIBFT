@@ -6,18 +6,18 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:15:05 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/11 18:15:38 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/19 16:49:55 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char		*ft_strchr(const char *s, int c)
 {
 	char	*p;
 	int		i;
 
-	p = (char *)s;
+	p = (void *)s;
 	i = 0;
 	while (*p != c)
 	{
