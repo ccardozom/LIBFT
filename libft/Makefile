@@ -6,7 +6,7 @@
 #    By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 11:08:48 by ccardozo          #+#    #+#              #
-#    Updated: 2019/11/19 17:54:29 by ccardozo         ###   ########.fr        #
+#    Updated: 2019/11/20 16:18:14 by ccardozo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,21 +51,38 @@ FILES = 		ft_memset.c \
 				ft_itoa.c \
 				ft_strtrim.c \
 				ft_lstnew.c \
-				ft_lstadd_front.c \
-				ft_lstsize.c \
-				ft_lstlast.c \
 				ft_lstadd_back.c \
-				ft_lstdelone.c \
+				ft_lstadd_front.c \
 				ft_lstclear.c \
+				ft_lstdelone.c \
 				ft_lstiter.c \
-				ft_lstmap.c
-OBJ = ${FILES:.c=.o}
+				ft_lstlast.c \
+				ft_lstmap.c \
+				ft_lstsize.c
+			
+#BONUS = ft_lstadd_back_bonus.c \#
+	#	ft_lstadd_front_bonus.c \#
+	#	ft_lstclear_bonus.c  \#
+	#	ft_lstdelone_bonus.c \#
+	#	ft_lstiter_bonus.c \#
+	#	ft_lstlast_bonus.c \#
+	#	ft_lstmap_bonus.c \#
+	#	ft_lstnew_bonus.c \#
+	#	ft_lstsize_bonus.c #
+
+OBJ = ${FILES:.c=.o} 
+
+#BON = ${BONUS:.c=.o}#
 
 all: $(NAME)
 
 $(NAME): $(FILES)
 	gcc $(CFLAGS) $(LFLAGS) $(FILES)
 	ar rc $(NAME) $(OBJ)
+
+#bonus:  $(FILES) $(BON)#
+#	gcc $(CFLAGS) $(LFLAGS) $(FILES) $(BONUS)#
+#	ar rc $(NAME) $(OBJ) $(BON)#
 
 clean:
 	rm -f *.o
