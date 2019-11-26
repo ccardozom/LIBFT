@@ -6,13 +6,13 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 09:26:14 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/07 10:08:44 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/21 10:39:49 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_isascii(int c)
 {
-	if (c >= 0 && c < 128)
-		return (1);
-	return (0);
+	return (c >= 0 && c < 128 ? 1 : 0);
 }

@@ -6,15 +6,13 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 09:26:14 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/07 09:40:28 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/21 10:39:19 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_isdigit(int c)
 {
-	if (c == '\0')
-		return (0);
-	if (c < '0' || c > '9')
-		return (0);
-	return (1);
+	return (c >= '0' && c <= '9' ? 1 : 0);
 }

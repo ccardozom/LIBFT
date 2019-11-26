@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/18 09:21:53 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/19 17:35:35 by ccardozo         ###   ########.fr       */
+/*   Created: 2019/11/15 08:51:32 by ccardozo          #+#    #+#             */
+/*   Updated: 2019/11/26 11:40:35 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *ls, void *(*f)(void*), void (*del)(void*))
+t_list	*ft_lstnew(void const *content)
 {
-	t_list	*new;
-	t_list	*tmp;
-	t_list	*aux;
+	t_list		*list;
 
-	if (!ls && !del)
+	if (!(list = (t_list*)malloc(sizeof(t_list))))
 		return (NULL);
-	aux = ls;
-	if (!(new = ft_lstnew(f(aux->content))))
-		return (NULL);
-	aux = aux->next;
-	while (aux)
-	{
-		if (!(tmp = ft_lstnew(f(aux->content))))
-			return (NULL);
-		ft_lstadd_back(&new, tmp);
-		aux = aux->next;
-	}
-	return (new);
+	if (!content)
+		list->content = NULL;
+	else
+		list->content = (void*)content;
+	list->next = NULL;
+	return (list);
 }

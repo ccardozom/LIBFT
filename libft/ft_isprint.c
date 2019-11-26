@@ -6,14 +6,13 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 10:09:01 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/07 10:14:40 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/21 10:41:40 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_isprint(int c)
 {
-	if (c >= ' ' && c <= '~')
-		return (1);
-	else
-		return (0);
+	return (c >= ' ' && c <= '~' ? 1 : 0);
 }

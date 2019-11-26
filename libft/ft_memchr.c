@@ -6,11 +6,11 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 14:44:52 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/12 09:16:12 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/21 11:12:59 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

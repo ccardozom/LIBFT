@@ -6,7 +6,7 @@
 /*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 13:43:42 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/14 14:06:02 by ccardozo         ###   ########.fr       */
+/*   Updated: 2019/11/21 10:20:02 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	ft_putstr_fd((char*)s, fd);
+	ft_putstr_fd((void *)s, fd);
 	ft_putchar_fd('\n', fd);
 }
