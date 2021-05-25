@@ -6,7 +6,7 @@
 /*   By: ccardozo <ccardozo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 18:15:22 by ccardozo          #+#    #+#             */
-/*   Updated: 2021/05/25 09:22:53 by ccardozo         ###   ########.fr       */
+/*   Updated: 2021/05/25 22:57:07 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		joined = malloc((ft_strlen(s1) + ft_strlen(s2)) + 1);
 		if (!joined)
 			return (NULL);
-		ft_strcat(ft_strcpy(joined, s1), s2);
+		ft_strcat(ft_strcpy(joined, (char *)s1), (char *)s2);
 		return (joined);
 	}
 }
