@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ccardozo <ccardozo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:17:59 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/11 15:21:56 by ccardozo         ###   ########.fr       */
+/*   Updated: 2021/05/25 21:12:50 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void		*ft_memmove(void *dst, void *src, size_t len)
+void	*ft_memmove(void *dst, void *src, size_t len)
 {
 	size_t	i;
 	char	*pdst;
 	char	*psrc;
 
-	pdst = (void*)dst;
-	psrc = (void*)src;
+	pdst = (void *)dst;
+	psrc = (void *)src;
 	if (src == dst)
 		return (dst);
 	if (src < dst)
