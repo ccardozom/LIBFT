@@ -6,50 +6,51 @@
 /*   By: ccardozo <ccardozo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 14:48:45 by ccardozo          #+#    #+#             */
-/*   Updated: 2021/05/25 22:22:11 by ccardozo         ###   ########.fr       */
+/*   Updated: 2021/05/26 01:05:21 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_len(unsigned int nb)
+static char		*if_positive(int n, int count)
 {
-	unsigned int	size;
+	char	*str;
 
-	size = 0;
-	while (nb >= 10)
+	str = (char*)malloc(sizeof(char) * (count + 1));
+	if (str == NULL)
+		return (NULL);
+	str[count] = '\0';
+	while (--count >= 0)
 	{
-		nb /= 10;
-		++size;
+		str[count] = (n % 10) + '0';
+		n /= 10;
 	}
-	return (size + 1);
+	return (str);
 }
 
-char	*ft_itoa(int nbr)
+char			*ft_itoa(int n)
 {
+	unsigned int	num;
 	char			*str;
-	unsigned int	nb;
-	unsigned int	i;
-	unsigned int	size;
+	int				count;
 
-	if (nbr < 0)
-		nb = (unsigned int)(nbr * -1);
-	else
-		nb = (unsigned int)nbr;
-	size = (unsigned int)count_len(nb);
-	i = 0;
-	str = (char *)malloc(sizeof(char) * (size + 1 + (nbr *= nbr < 0)));
-	if (!str)
-		return (0);
-	if (nbr < 0 && str[i] == '-')
-		size++;
-	i = size - 1;
-	while (nb >= 10)
+	str = NULL;
+	count = ft_count_digits(n);
+	if (n < 0)
 	{
-		str[i--] = (char)(nb % 10 + 48);
-		nb /= 10;
+		str = (char*)malloc(sizeof(char) * (count + 2));
+		if (str == NULL)
+			return (NULL);
+		num = n * -1;
+		str[count + 1] = '\0';
+		while (count)
+		{
+			str[count] = (num % 10) + '0';
+			count--;
+			num /= 10;
+		}
+		str[0] = '-';
+		return (str);
 	}
-	str[i] = (char)(nb % 10 + 48);
-	str[size] = '\0';
-	return (str);
+	return (if_positive(n, count));
 }

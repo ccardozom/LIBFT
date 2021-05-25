@@ -6,37 +6,31 @@
 /*   By: ccardozo <ccardozo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 08:20:01 by ccardozo          #+#    #+#             */
-/*   Updated: 2021/05/25 22:29:24 by ccardozo         ###   ########.fr       */
+/*   Updated: 2021/05/26 00:13:57 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *s)
+int		ft_atoi(const char *str)
 {
-	int			p;
-	long int	nb;
+	unsigned int	num;
+	int				i;
+	int				np;
 
-	nb = 0;
-	while (*s == 32 || (*s >= 9 && *s <= 13))
-		s++;
-	if (*s == '-')
+	np = 1;
+	i = 0;
+	num = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\f' ||
+			str[i] == '\r' || str[i] == '\n' || str[i] == '\v')
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+		if (str[i++] == '-')
+			np = -1;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		p = -1;
-		s++;
+		num = num * 10 + (str[i] - '0');
+		i++;
 	}
-	else
-		p = 1;
-	if (*s == '+')
-		s++;
-	while (ft_isdigit(*s))
-	{
-		nb = nb * 10 + (*s - '0');
-		s++;
-		if (nb * p > 2147483647)
-			return (-1);
-		if (nb * p < -2147483648)
-			return (0);
-	}
-	return (nb * p);
+	return ((int)(np * num));
 }

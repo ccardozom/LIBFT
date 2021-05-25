@@ -6,7 +6,7 @@
 #    By: ccardozo <ccardozo@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 11:08:48 by ccardozo          #+#    #+#              #
-#    Updated: 2021/05/25 22:47:12 by ccardozo         ###   ########.fr        #
+#    Updated: 2021/05/26 01:08:48 by ccardozo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ FILES = 		ft_memset.c \
 				ft_memmove.c \
 				ft_memchr.c \
 				ft_memcmp.c \
+				ft_count_digits.c \
 				ft_isalpha.c \
 				ft_isdigit.c \
 				ft_isalnum.c \
