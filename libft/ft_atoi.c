@@ -6,7 +6,7 @@
 /*   By: ccardozo <ccardozo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 08:20:01 by ccardozo          #+#    #+#             */
-/*   Updated: 2021/05/25 22:28:35 by ccardozo         ###   ########.fr       */
+/*   Updated: 2021/05/25 22:29:24 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_atoi(const char *s)
 	if (*s == '-')
 	{
 		p = -1;
-		s++;	
+		s++;
 	}
 	else
 		p = 1;
