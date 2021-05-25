@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: ccardozo <ccardozo@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 11:08:48 by ccardozo          #+#    #+#              #
-#    Updated: 2019/11/26 12:23:21 by ccardozo         ###   ########.fr        #
+#    Updated: 2021/05/25 22:47:12 by ccardozo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,9 @@ FILES = 		ft_memset.c \
 				ft_strrchr.c \
 				ft_strncmp.c \
 				ft_strlcpy.c \
+				ft_strcpy.c \
 				ft_strlcat.c \
+				ft_strcat.c \
 				ft_strnstr.c \
 				ft_atoi.c \
 				ft_calloc.c \
