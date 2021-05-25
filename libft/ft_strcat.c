@@ -6,14 +6,14 @@
 /*   By: ccardozo <ccardozo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 22:44:27 by ccardozo          #+#    #+#             */
-/*   Updated: 2021/05/25 22:44:41 by ccardozo         ###   ########.fr       */
+/*   Updated: 2021/05/25 22:54:20 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (dest[i] != '\0')
