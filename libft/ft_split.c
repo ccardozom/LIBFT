@@ -6,7 +6,7 @@
 /*   By: ccardozo <ccardozo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 08:58:33 by ccardozo          #+#    #+#             */
-/*   Updated: 2021/05/25 10:15:10 by ccardozo         ###   ########.fr       */
+/*   Updated: 2021/05/25 10:19:13 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static char	*ft_strndup(const char *s1, size_t n)
 	char	*clone;
 	size_t	i;
 
-	clone = (char*)malloc(sizeof(char *) * (n + 1));
+	clone = (char *)malloc(sizeof(char *) * (n + 1));
 	if (!clone)
 		return (NULL);
 	i = 0;
@@ -53,7 +53,7 @@ static char	*ft_strndup(const char *s1, size_t n)
 
 static void	*destroy_strs(char **strs)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (strs[i])
@@ -82,7 +82,8 @@ char	**ft_split(char const *s, char c)
 		i = 0;
 		while (s[j + i] && s[j + i] != c)
 			i++;
-		if ((str[tab_counter++] = ft_strndup(&s[j], i)) == NULL)
+		str[tab_counter] = ft_strndup(&s[j], i);
+		if (!str[tab_counter++])
 			return (destroy_strs(str));
 		j += i - 1;
 	}
