@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ccardozo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ccardozo <ccardozo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 16:52:15 by ccardozo          #+#    #+#             */
-/*   Updated: 2019/11/21 13:56:10 by ccardozo         ###   ########.fr       */
+/*   Updated: 2021/05/25 09:08:34 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static char	*ft_strncpy(char *dest, const char *src, size_t n)
 	return (dest);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	len;
@@ -41,9 +41,10 @@ char		*ft_strtrim(char const *s1, char const *set)
 	len = ft_strlen(&s1[start]);
 	if (len != 0)
 		while (s1[start + len - 1]
-				&& ft_strchr(set, s1[start + len - 1]) != NULL)
+		&& ft_strchr(set, s1[start + len - 1]) != NULL)
 			len--;
-	if (!(trimed = (char*)malloc(sizeof(char) * (len + 1))))
+	trimed = (char*)malloc(sizeof(char) * (len + 1));
+	if (!trimed)
 		return (NULL);
 	trimed = ft_strncpy(trimed, &s1[start], len);
 	trimed[len] = '\0';
