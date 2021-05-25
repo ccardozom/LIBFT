@@ -6,7 +6,7 @@
 /*   By: ccardozo <ccardozo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 08:58:33 by ccardozo          #+#    #+#             */
-/*   Updated: 2021/05/25 09:44:24 by ccardozo         ###   ########.fr       */
+/*   Updated: 2021/05/25 10:15:10 by ccardozo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static size_t	count_segment(char const *s, char c)
 	return (counter);
 }
 
-static char		*ft_strndup(const char *s1, size_t n)
+static char	*ft_strndup(const char *s1, size_t n)
 {
 	char	*clone;
 	size_t	i;
@@ -51,7 +51,7 @@ static char		*ft_strndup(const char *s1, size_t n)
 	return (clone);
 }
 
-static void		*destroy_strs(char **strs)
+static void	*destroy_strs(char **strs)
 {
 	int i;
 
@@ -69,11 +69,9 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	j;
 
-	if (s == NULL)
-		return (NULL);
 	tab_counter = count_segment(s, c);
 	str = (char **)malloc(sizeof(char *) * (tab_counter + 1));
-	if (!str)
+	if (!str || !s)
 		return (NULL);
 	tab_counter = 0;
 	j = -1;
